@@ -1,41 +1,19 @@
 package tictactoe
 
-fun main() {
-    val select = readln()
-    val orgMessage = readln()
-    val encNum = readln().toInt()
-    if (select == "enc") {
-        println(smpEncrypt(orgMessage, encNum))
+fun main(args: Array<String>) {
+    var mode: String = "enc"
+    var key: Int = 0
+    var data: String = ""
+
+    args.withIndex().forEach {
+        if(it.value == "-mode") mode = args[it.index + 1]
+        if(it.value == "-key") key = args[it.index + 1].toInt() ?: 0
+        if(it.value == "-data") data = args[it.index + 1]
+    }
+
+    if (mode == "enc") {
+        println(smpEncrypt(data, key))
     } else {
-        println(smpDecrypt(orgMessage, encNum))
+        println(smpDecrypt(data, key))
     }
-}
-
-fun smpEncrypt(org: String, shift: Int): String {
-    var retStr: String = ""
-    val diff = shift
-    org.toCharArray().forEach {
-        if (true) {
-            var chr = it.code + diff
-//            if ('z'.code < chr) chr = 'a'.code + (chr - ('z'.code + 1))
-            retStr += chr.toChar()
-        } else {
-            retStr += it.toChar()
-        }
-    }
-    return retStr
-}
-
-fun smpDecrypt(msg: String, shift: Int): String {
-    var retStr: String = ""
-    msg.toCharArray().forEach {
-        if (true) {
-            var chr = it.code - shift
-//            if (chr < 'a'.code) chr = 'z'.code - ('a'.code - chr - 1)
-            retStr += chr.toChar()
-        } else {
-            retStr += it.toChar()
-        }
-    }
-    return retStr
 }
