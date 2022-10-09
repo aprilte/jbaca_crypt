@@ -1,0 +1,26 @@
+type: choice
+is_multiple_choice: false
+options:
+- text: A file with this name will just be created
+- text: Nothing
+- text: AccessDeniedException will be thrown
+- text: The program will crash
+files:
+- name: src/Main.kt
+  visible: true
+  text: |
+    // You can experiment here, it won’t be checked
+
+    fun main(args: Array<String>) {
+      // put your code here
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/9713#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Sun, 09 Oct 2022 04:59:32 UTC
+record: -1
+selected_options:
+- 0
+local_check: false

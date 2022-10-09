@@ -6,3 +6,5 @@ content:
 - The main() function
 - Functions as objects
 - Lambda expressions
+- Writing files
+- Jumps and returns
